@@ -88,7 +88,7 @@ Sample queries include:
    );
 5. **List Students, Doctors, and Therapy Details**:
    ```sql
-  SELECT ST.Name AS StudentName, D.DoctorName, A.Date, A.Time, TS.SessionType
+   SELECT ST.Name AS StudentName, D.DoctorName, A.Date, A.Time, TS.SessionType
    FROM STUDENT ST
    JOIN STUDENT_DOCTOR SD ON ST.StudentID = SD.StudentID_FK
    JOIN DOCTORS D ON SD.DoctorID_FK = D.DoctorID
@@ -100,7 +100,7 @@ Sample queries include:
 ---
 
 ## Authors
-Vinyas Naidu Karri
+Vinyas Naidu Karri.
 Sri Sai Tarun Vemu
 
 ---
