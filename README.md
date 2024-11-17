@@ -64,3 +64,47 @@ Sample queries include:
    FROM PAYMENTS
    GROUP BY StudentID_FK
    ORDER BY TotalPaid DESC;
+2. **Students and Their Workouts**:
+   ```sql
+   SELECT S.Name AS StudentName, W.WorkoutName 
+   FROM STUDENT S 
+   JOIN STUDENT_WORKOUTS SW ON S.StudentID = SW.StudentID_FK 
+   JOIN WORKOUT W ON SW.WorkoutID_FK = W.WorkoutID 
+   ORDER BY S.Name;
+3. **Find Students Above the Average GPA of Their School**:
+   ```sql
+   SELECT StudentID_FK, SUM(Amount) AS TotalPaid
+   FROM PAYMENTS
+   GROUP BY StudentID_FK
+   ORDER BY TotalPaid DESC;
+4. **Find Workouts Attended by at Least One Student**:
+   ```sql
+   SELECT W.WorkoutName
+   FROM WORKOUT W
+   WHERE EXISTS (
+       SELECT StudentID
+       FROM STUDENT_WORKOUTS SW
+       WHERE SW.WorkoutID_FK = W.WorkoutID
+   );
+5. **List Students, Doctors, and Therapy Details**:
+   ```sql
+  SELECT ST.Name AS StudentName, D.DoctorName, A.Date, A.Time, TS.SessionType
+   FROM STUDENT ST
+   JOIN STUDENT_DOCTOR SD ON ST.StudentID = SD.StudentID_FK
+   JOIN DOCTORS D ON SD.DoctorID_FK = D.DoctorID
+   JOIN APPOINTMENTS A ON SD.StudentID_FK = A.StudentDoctorID_FK
+   JOIN THERAPY_SESSIONS TS ON A.AppointmentID = TS.AppointmentID_FK
+   WHERE TS.SessionType = 'Physical'
+   ORDER BY A.Date, A.Time;
+
+---
+
+## Authors
+Vinyas Naidu Karri
+Sri Sai Tarun Vemu
+
+---
+
+## License
+
+This project is licensed under the MIT License. For more details, see the [LICENSE.md](LICENSE.md) file.
