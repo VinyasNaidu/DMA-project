@@ -54,6 +54,27 @@ The database schema, implemented using MySQL, contains 11 normalized tables:
 ## Implementation
 The relational model is implemented in MySQL under the schema `Student_Mental_Health`. The schema ensures normalized data storage to optimize queries and maintain data integrity.
 
+### Implementation of Python and SQL
+- Connected SQL Workbench with Python using root credentials.
+- Retrieved student data from the database and converted it into a data frame for visualization in Jupyter Notebook.
+
+### Visualizations:
+- **Gender Distribution**: Illustrated diverse gender representation among students (Male, Female, Non-Binary).
+- **Correlation Heat Map**: Showed the relationship between Age, CreditLoad, and GPA using Seaborn.
+- **Time Distribution**: Bar chart of student activity across different times of the day.
+- **GPA vs. Course**: Scatter plot showing variation of GPA across different courses.
+
+### Implementation of NoSQL and SQL
+- Created a cluster on MongoDB to mirror all MySQL tables.
+- Performed queries on the student_mental_health database using MongoDB.
+
+### NoSQL Queries:
+- **Find Male Students**: Retrieve all male students.
+- **Find Students Above Age 20**: List students whose age is greater than 20.
+- **Find Students with GPA > 3.5**: Retrieve students with GPA greater than 3.5.
+- **Count Students by Gender**: Count the number of students by gender.
+- Find Students Whose Name Starts with 'A'.
+
 ---
 
 ## SQL Queries
